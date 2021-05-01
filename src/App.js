@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import animals from './Componentes/data';
+import AnimalCard from './Componentes/AnimalCard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      {animals.map(animal =>
+        <AnimalCard
+          diet={animal.diet}
+          key={animal.name}
+          name={animal.name}
+          size={animal.size}
+        />
+      )}
     </div>
-  );
-}
+  )
+};
+
 
 export default App;
